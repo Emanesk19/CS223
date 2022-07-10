@@ -20,15 +20,23 @@ namespace WindowsFormsApp1
        
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            item it = new item();
-            it.number = Convert.ToInt32(txt_num.Text);
-            it.Name = txtName.Text;
-            it.price = Convert.ToDouble(txtPrice.Text);
-            it.quantity = Convert.ToInt32(txtQty.Text);
-            it.date = dateTimePicker1.Text;
-            it.inventoryNumber = Convert.ToInt32(txt_InventoryNum.Text);
-            MessageBox.Show("Saved " + it.date);
+            item it = new item()
+            {
+                number = Convert.ToInt32(txt_num.Text),
+                Name = txtName.Text,
+                price = Convert.ToDouble(txtPrice.Text),
+                quantity = Convert.ToInt32(txtQty.Text),
+                date = dateTimePicker1.Text,
+                inventoryNumber = Convert.ToInt32(txt_InventoryNum.Text),
+            };
+            it.save();
+            MessageBox.Show("Saved " );
             
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

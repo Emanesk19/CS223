@@ -61,7 +61,6 @@
             this.lbl_date.Size = new System.Drawing.Size(30, 13);
             this.lbl_date.TabIndex = 1;
             this.lbl_date.Text = "Date";
-            
             // 
             // lbl_inventory
             // 
@@ -71,7 +70,6 @@
             this.lbl_inventory.Size = new System.Drawing.Size(91, 13);
             this.lbl_inventory.TabIndex = 2;
             this.lbl_inventory.Text = "Inventory Number";
-            
             // 
             // txt_num
             // 
@@ -118,7 +116,6 @@
             this.lblQty.Size = new System.Drawing.Size(46, 13);
             this.lblQty.TabIndex = 9;
             this.lblQty.Text = "Quantity";
-            
             // 
             // lblPrice
             // 
@@ -128,7 +125,6 @@
             this.lblPrice.Size = new System.Drawing.Size(31, 13);
             this.lblPrice.TabIndex = 10;
             this.lblPrice.Text = "Price";
-            
             // 
             // txtQty
             // 
@@ -162,6 +158,7 @@
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Form1
             // 
