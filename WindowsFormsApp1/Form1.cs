@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
@@ -20,23 +21,50 @@ namespace WindowsFormsApp1
        
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            item it = new item()
+            Regex reg = new Regex(@"[a-z]-[A-Z]{4}$");
+            //to check if the text area is null or empty and also to check the length of the string 
+            if (String.IsNullOrEmpty(txtName.Text) || txtName.Text.Length < 3)
             {
-                number = Convert.ToInt32(txt_num.Text),
-                Name = txtName.Text,
-                price = Convert.ToDouble(txtPrice.Text),
-                quantity = Convert.ToInt32(txtQty.Text),
-                date = dateTimePicker1.Text,
-                inventoryNumber = Convert.ToInt32(txt_InventoryNum.Text),
-            };
-            it.save();
-            MessageBox.Show("Saved " );
-            
+                //gives error symbol if textarea is empty or null and takes 2 parameters the text area and the message
+                errorProvider1.SetError(txtName, "Name is required and must be morethan 3 char...");
+            }
+
+           else if(reg.IsMatch(txtName.Text))
+            {
+//we have to clear the error provider or it wont stop generating an error
+                errorProvider1.Clear();
+                Item it = new Item();
+
+
+                    try
+                {
+                    it.number = Convert.ToInt32(txt_num.Text);
+                    it.price = Convert.ToDouble(txtPrice.Text);
+                    it.quantity = Convert.ToInt32(txtQty.Text);
+                    it.inventoryNumber = Convert.ToInt32(txt_InventoryNum.Text);
+                }
+                catch
+                {
+
+                }
+                it.Name = txtName.Text;
+                it.date = dateTimePicker1.Text;
+                it.save();
+//data grid view used to display the data after the add button is clicked
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Item.getAllProduct();
+                MessageBox.Show($"the Item {it.Name}Saved ");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

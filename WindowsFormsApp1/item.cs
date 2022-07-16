@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal class item
+    internal class Item
     {
+       static  List<Item> item = new List<Item>();
         public int number { get; set; }
         public string date { get; set; }
         public int inventoryNumber { get; set; }
@@ -15,8 +16,14 @@ namespace WindowsFormsApp1
         public int quantity { get; set; }
         public double price { get; set; }
         public void save()
+        {   
+            
+            item.Add(this);
+        }
+
+        public static List<Item> getAllProduct()
         {
-            Console.WriteLine("Saved");
+            return item;
         }
     }
 }
