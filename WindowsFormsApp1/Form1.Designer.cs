@@ -48,14 +48,25 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chklistbox = new System.Windows.Forms.CheckedListBox();
+            this.radbtnSimple = new System.Windows.Forms.RadioButton();
+            this.radbtnVariable = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radbtnPaymentonDel = new System.Windows.Forms.RadioButton();
+            this.radbtnPaypal = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblDisplayName = new System.Windows.Forms.Label();
+            this.chkAvailable = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNumber
             // 
             this.lblNumber.AutoSize = true;
-            this.lblNumber.Location = new System.Drawing.Point(34, 31);
+            this.lblNumber.Location = new System.Drawing.Point(12, 69);
             this.lblNumber.Name = "lblNumber";
             this.lblNumber.Size = new System.Drawing.Size(44, 13);
             this.lblNumber.TabIndex = 0;
@@ -64,7 +75,7 @@
             // lbl_date
             // 
             this.lbl_date.AutoSize = true;
-            this.lbl_date.Location = new System.Drawing.Point(428, 31);
+            this.lbl_date.Location = new System.Drawing.Point(210, 69);
             this.lbl_date.Name = "lbl_date";
             this.lbl_date.Size = new System.Drawing.Size(30, 13);
             this.lbl_date.TabIndex = 1;
@@ -73,37 +84,38 @@
             // lbl_inventory
             // 
             this.lbl_inventory.AutoSize = true;
-            this.lbl_inventory.Location = new System.Drawing.Point(802, 31);
+            this.lbl_inventory.Location = new System.Drawing.Point(540, 69);
             this.lbl_inventory.Name = "lbl_inventory";
             this.lbl_inventory.Size = new System.Drawing.Size(91, 13);
             this.lbl_inventory.TabIndex = 2;
             this.lbl_inventory.Text = "Inventory Number";
+            this.lbl_inventory.Click += new System.EventHandler(this.lbl_inventory_Click);
             // 
             // txt_num
             // 
-            this.txt_num.Location = new System.Drawing.Point(12, 66);
+            this.txt_num.Location = new System.Drawing.Point(2, 95);
             this.txt_num.Name = "txt_num";
-            this.txt_num.Size = new System.Drawing.Size(179, 20);
+            this.txt_num.Size = new System.Drawing.Size(104, 20);
             this.txt_num.TabIndex = 3;
             // 
             // txt_InventoryNum
             // 
-            this.txt_InventoryNum.Location = new System.Drawing.Point(707, 69);
+            this.txt_InventoryNum.Location = new System.Drawing.Point(531, 99);
             this.txt_InventoryNum.Name = "txt_InventoryNum";
-            this.txt_InventoryNum.Size = new System.Drawing.Size(249, 20);
+            this.txt_InventoryNum.Size = new System.Drawing.Size(139, 20);
             this.txt_InventoryNum.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(364, 66);
+            this.dateTimePicker1.Location = new System.Drawing.Point(162, 96);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(179, 20);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(34, 123);
+            this.lblName.Location = new System.Drawing.Point(884, 73);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(72, 13);
             this.lblName.TabIndex = 7;
@@ -112,15 +124,15 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(12, 166);
+            this.txtName.Location = new System.Drawing.Point(834, 99);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(286, 20);
+            this.txtName.Size = new System.Drawing.Size(122, 20);
             this.txtName.TabIndex = 8;
             // 
             // lblQty
             // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Location = new System.Drawing.Point(428, 123);
+            this.lblQty.Location = new System.Drawing.Point(398, 73);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(46, 13);
             this.lblQty.TabIndex = 9;
@@ -129,7 +141,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(768, 123);
+            this.lblPrice.Location = new System.Drawing.Point(753, 69);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(31, 13);
             this.lblPrice.TabIndex = 10;
@@ -137,21 +149,21 @@
             // 
             // txtQty
             // 
-            this.txtQty.Location = new System.Drawing.Point(335, 169);
+            this.txtQty.Location = new System.Drawing.Point(356, 96);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(249, 20);
+            this.txtQty.Size = new System.Drawing.Size(129, 20);
             this.txtQty.TabIndex = 11;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(707, 166);
+            this.txtPrice.Location = new System.Drawing.Point(721, 95);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(249, 20);
+            this.txtPrice.Size = new System.Drawing.Size(72, 20);
             this.txtPrice.TabIndex = 12;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(59, 221);
+            this.btnAdd.Location = new System.Drawing.Point(15, 264);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 13;
@@ -161,7 +173,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(669, 221);
+            this.btnCancel.Location = new System.Drawing.Point(661, 273);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 14;
@@ -185,7 +197,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 264);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 314);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
@@ -198,18 +210,120 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(954, 195);
+            this.dataGridView1.Size = new System.Drawing.Size(954, 131);
             this.dataGridView1.TabIndex = 15;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // chklistbox
+            // 
+            this.chklistbox.FormattingEnabled = true;
+            this.chklistbox.Items.AddRange(new object[] {
+            "is available",
+            "not available"});
+            this.chklistbox.Location = new System.Drawing.Point(780, 134);
+            this.chklistbox.Name = "chklistbox";
+            this.chklistbox.Size = new System.Drawing.Size(120, 94);
+            this.chklistbox.TabIndex = 17;
+            // 
+            // radbtnSimple
+            // 
+            this.radbtnSimple.AutoSize = true;
+            this.radbtnSimple.Location = new System.Drawing.Point(30, 26);
+            this.radbtnSimple.Name = "radbtnSimple";
+            this.radbtnSimple.Size = new System.Drawing.Size(56, 17);
+            this.radbtnSimple.TabIndex = 18;
+            this.radbtnSimple.TabStop = true;
+            this.radbtnSimple.Text = "Simple";
+            this.radbtnSimple.UseVisualStyleBackColor = true;
+            // 
+            // radbtnVariable
+            // 
+            this.radbtnVariable.AutoSize = true;
+            this.radbtnVariable.Location = new System.Drawing.Point(30, 72);
+            this.radbtnVariable.Name = "radbtnVariable";
+            this.radbtnVariable.Size = new System.Drawing.Size(63, 17);
+            this.radbtnVariable.TabIndex = 19;
+            this.radbtnVariable.TabStop = true;
+            this.radbtnVariable.Text = "Variable";
+            this.radbtnVariable.UseVisualStyleBackColor = true;
+            this.radbtnVariable.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radbtnPaymentonDel);
+            this.groupBox1.Controls.Add(this.radbtnPaypal);
+            this.groupBox1.Location = new System.Drawing.Point(431, 134);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Payment Method";
+            // 
+            // radbtnPaymentonDel
+            // 
+            this.radbtnPaymentonDel.AutoSize = true;
+            this.radbtnPaymentonDel.Location = new System.Drawing.Point(15, 22);
+            this.radbtnPaymentonDel.Name = "radbtnPaymentonDel";
+            this.radbtnPaymentonDel.Size = new System.Drawing.Size(125, 17);
+            this.radbtnPaymentonDel.TabIndex = 22;
+            this.radbtnPaymentonDel.TabStop = true;
+            this.radbtnPaymentonDel.Text = "Payment on  Delivery";
+            this.radbtnPaymentonDel.UseVisualStyleBackColor = true;
+            // 
+            // radbtnPaypal
+            // 
+            this.radbtnPaypal.AutoSize = true;
+            this.radbtnPaypal.Location = new System.Drawing.Point(18, 50);
+            this.radbtnPaypal.Name = "radbtnPaypal";
+            this.radbtnPaypal.Size = new System.Drawing.Size(58, 17);
+            this.radbtnPaypal.TabIndex = 21;
+            this.radbtnPaypal.TabStop = true;
+            this.radbtnPaypal.Text = "PayPal";
+            this.radbtnPaypal.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radbtnSimple);
+            this.groupBox2.Controls.Add(this.radbtnVariable);
+            this.groupBox2.Location = new System.Drawing.Point(15, 134);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Product Type";
+            // 
+            // lblDisplayName
+            // 
+            this.lblDisplayName.AutoSize = true;
+            this.lblDisplayName.Location = new System.Drawing.Point(21, 21);
+            this.lblDisplayName.Name = "lblDisplayName";
+            this.lblDisplayName.Size = new System.Drawing.Size(35, 13);
+            this.lblDisplayName.TabIndex = 23;
+            this.lblDisplayName.Text = "label1";
+            // 
+            // chkAvailable
+            // 
+            this.chkAvailable.AutoSize = true;
+            this.chkAvailable.Location = new System.Drawing.Point(357, 268);
+            this.chkAvailable.Name = "chkAvailable";
+            this.chkAvailable.Size = new System.Drawing.Size(80, 17);
+            this.chkAvailable.TabIndex = 24;
+            this.chkAvailable.Text = "Is Available";
+            this.chkAvailable.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 471);
+            this.Controls.Add(this.chkAvailable);
+            this.Controls.Add(this.lblDisplayName);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.chklistbox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -227,8 +341,13 @@
             this.Controls.Add(this.lblNumber);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,6 +371,15 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckedListBox chklistbox;
+        private System.Windows.Forms.RadioButton radbtnVariable;
+        private System.Windows.Forms.RadioButton radbtnSimple;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radbtnPaymentonDel;
+        private System.Windows.Forms.RadioButton radbtnPaypal;
+        private System.Windows.Forms.Label lblDisplayName;
+        private System.Windows.Forms.CheckBox chkAvailable;
     }
 }
 

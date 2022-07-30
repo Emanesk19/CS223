@@ -15,6 +15,8 @@ namespace WindowsFormsApp1
         public string Name { get; set; }
         public int quantity { get; set; }
         public double price { get; set; }
+        public bool isAvailable { get; set; }
+        public bool paymentMethod { get; set; }
         public void save()
         {   
             
