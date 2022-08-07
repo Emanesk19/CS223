@@ -21,9 +21,10 @@ namespace WindowsFormsApp1
         {
             if (txtUsername.Text == "admin" && txtPassword.Text=="admin")
             {
-                Form1 displayScreen = new Form1(txtUsername.Text);
+                Form1 displayScreen = new Form1();
                 Hide();
                 displayScreen.Show();
+                this.Close();
 
             }
             else

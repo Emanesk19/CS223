@@ -27,5 +27,11 @@ namespace WindowsFormsApp1
         {
             return item;
         }
+
+        public static Item find(string Name)
+        {
+            return item.Find(i => i.Name == Name);
+            
+        }
     }
 }
