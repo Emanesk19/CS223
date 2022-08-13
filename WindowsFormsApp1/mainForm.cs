@@ -19,7 +19,6 @@ namespace WindowsFormsApp1
 
         private void addNewProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 display = new Form1();
             
             
                
@@ -43,9 +42,10 @@ namespace WindowsFormsApp1
             {
                 ActiveMdiChild.Close();
             }
-            DisplayAll display = new DisplayAll();
-            display.MdiParent = this;
-            display.Show();
+            Panels pan = new Panels();
+            pan.MdiParent = this;
+            pan.Show();
+            
 
         }
 
