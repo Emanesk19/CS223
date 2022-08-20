@@ -15,3 +15,4 @@ C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\Inventory.csproj.Generat
 C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\Inventory.csproj.CoreCompileInputs.cache
 C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Detail.resources
