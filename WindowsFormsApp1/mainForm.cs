@@ -59,5 +59,17 @@ namespace WindowsFormsApp1
             search.MdiParent = this;
             search.Show();
         }
+
+        private void updateProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+
+            Update_Product update_ = new Update_Product();
+            update_.MdiParent = this;
+            update_.Show();
+        }
     }
 }
