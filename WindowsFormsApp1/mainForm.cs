@@ -71,5 +71,17 @@ namespace WindowsFormsApp1
             update_.MdiParent = this;
             update_.Show();
         }
+
+        private void deleteProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+
+            DeleteForm delete = new DeleteForm();
+            delete.MdiParent = this;
+            delete.Show();
+        }
     }
 }

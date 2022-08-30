@@ -66,10 +66,14 @@ namespace WindowsFormsApp1
 //data grid view used to display the data after the add button is clicked
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Item.getAllProduct();
-                MessageBox.Show((it.result).ToString());
+                MessageBox.Show((it.result).ToString() + "record Inserted");
             }
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Item.getAllProduct();
+        }
     }
 }

@@ -13,3 +13,9 @@ Create table Product
 )
 select *from Product
 delete Product
+
+update product 
+set price = 5677
+where Proname = 'book'
+
+select Product.ProName from Product where Proname like 'buk%'

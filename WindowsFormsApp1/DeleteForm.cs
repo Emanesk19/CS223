@@ -10,31 +10,30 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class SearchForm : Form
+    public partial class DeleteForm : Form
     {
-        public SearchForm()
+        public DeleteForm()
         {
             InitializeComponent();
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             Item i = new Item();
-            bool found = i.find(textBox1.Text);
-            if ( found== true)
+            if(i.find(txtName.Text) == true)
             {
-                MessageBox.Show("Product Found ");
+                Item.delete(txtName.Text);
+                MessageBox.Show("Deleted");
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Item.getAllProduct();
-
             }
-            else
-            {
-                MessageBox.Show("Product Not Found ");
+           
+        }
 
-            }
-
+        private void DeleteForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Item.getAllProduct();
         }
     }
 }

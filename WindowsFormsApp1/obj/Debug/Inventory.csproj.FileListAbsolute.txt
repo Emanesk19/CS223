@@ -17,3 +17,4 @@ C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Detail.resources
 C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Update_Product.resources
+C:\Users\emane\Desktop\CS223\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DeleteForm.resources

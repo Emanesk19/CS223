@@ -21,10 +21,19 @@ namespace WindowsFormsApp1
 
         public void save()
         {
-            string query1 = "insert into Product values('" + this.number + "','" + this.Name + "','" + this.quantity + "','" + this.price + "','" + this.date + "','" + this.inventoryNumber + "','" + this.isAvailable + "')";
+            string query1 = "insert into Product " +
+                "values(@num,@name ,@qty,@price,@date,@invNum,@available)";
+
             conn.Open();
             SqlCommand cmd = new SqlCommand(query1, conn);
-            result = cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@num", this.number);
+            cmd.Parameters.AddWithValue("@name ", this.Name);
+            cmd.Parameters.AddWithValue("@qty ", this.quantity);
+            cmd.Parameters.AddWithValue("@price ", this.price);
+            cmd.Parameters.AddWithValue("@date ", this.date);
+            cmd.Parameters.AddWithValue("@invNum ", this.inventoryNumber);
+            cmd.Parameters.AddWithValue("@available ", this.isAvailable);
+             result = cmd.ExecuteNonQuery();
             conn.Close();
             
         }
@@ -55,20 +64,54 @@ namespace WindowsFormsApp1
             conn.Close();
              return it;
         }
-
-        public static void updateProduct(double price , string proName)
+         static public int res = 0;
+        public static void updateProductPrice( string proName, string newValue )
         {
-            string query3 = "Update Product set price = '" + price + "' where ProName = '" + proName + "'";
-            conn.Open();
+            string query3 = "Update Product set Price = @newValue where ProName = @proName";
+               
+                
+             conn.Open();
             SqlCommand cmd = new SqlCommand(query3, conn);
-            int res = cmd.ExecuteNonQuery();
-            conn.Close();
+           
+            cmd.Parameters.AddWithValue("@newValue ", newValue);
+            cmd.Parameters.AddWithValue("@proName ", proName);
+            res = cmd.ExecuteNonQuery();
+              conn.Close();
 
         }
-        public static Item find(string Name)
+        public static void delete(string proName)
         {
-            return item.Find(i => i.Name == Name);
+            string query4 = "Delete Product where ProName = @proName";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query4, conn);
+            cmd.Parameters.AddWithValue("@proName ", proName);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public  bool find(string proName)
+        {
+            List<Item> it = new List<Item>();
 
+            string query5 = " select * from Product where ProName = @name";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query5, conn);
+            cmd.Parameters.AddWithValue("@name ", proName);
+            SqlDataReader res = cmd.ExecuteReader();
+            bool isFound = false;
+            while (res.Read())
+            {
+                Item i = new Item();
+                i.number = Convert.ToInt32(res["ProNumber"]);
+                i.Name = res["ProName"].ToString();
+                i.quantity = Convert.ToInt32(res["quantity"]);
+                i.price = Convert.ToDouble(res["price"]);
+                i.inventoryNumber = Convert.ToInt32(res["inventoryNumber"]);
+                i.date = res["EntryDate"].ToString();
+                i.isAvailable = Convert.ToBoolean(res["isAvailable"]);
+                isFound = true;
+            }
+            conn.Close();
+            return isFound;
         }
     }
 }

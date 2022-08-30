@@ -19,9 +19,28 @@ namespace WindowsFormsApp1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Item.updateProduct(Convert.ToDouble(txtPrice.Text), txtName.Text);
-            MessageBox.Show("Updated ");
+            Item i = new Item();
 
+            if(i.find(txtName.Text) == true)
+            {
+                Item.updateProductPrice(txtName.Text, (txtPrice.Text).ToString());
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Item.getAllProduct();
+                MessageBox.Show(Item.res + "  Row Updated ");
+            }
+            else
+            {
+                MessageBox.Show(Item.res + " Row Updated ");
+
+            }
+
+
+        }
+
+        private void Update_Product_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Item.getAllProduct();
         }
     }
 }

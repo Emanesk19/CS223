@@ -40,7 +40,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 71);
+            this.label1.Location = new System.Drawing.Point(23, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 42);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(278, 84);
+            this.txtName.Location = new System.Drawing.Point(228, 36);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(233, 20);
             this.txtName.TabIndex = 1;
@@ -76,16 +76,16 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 145);
+            this.label2.Location = new System.Drawing.Point(23, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 42);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Enter the new price\r\n\r\n";
+            this.label2.Text = "Enter the new value";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(278, 158);
+            this.txtPrice.Location = new System.Drawing.Point(228, 145);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(233, 20);
             this.txtPrice.TabIndex = 5;
@@ -103,6 +103,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Update_Product";
             this.Text = "Update_Product";
+            this.Load += new System.EventHandler(this.Update_Product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
